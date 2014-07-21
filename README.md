@@ -61,3 +61,11 @@ Results
 -------
 
 ...
+
+
+Copyright & License
+-------------------
+
+2014 (c) Google, Inc.
+Apache 2. See LICENSE.txt.
+This is NOT an official Google product.
