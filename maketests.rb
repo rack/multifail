@@ -128,3 +128,10 @@ fieldsets.each do |name, set|
   end
 end
 
+open('index.html', 'w') do |io|
+  io.puts "<!doctype html><html><head><title>multifail</title></head><body><ul>"
+  Dir['tests/*.html'].each do |test|
+    io.puts "<li><a href='#{test}'>#{test}</a></li>"
+  end
+  io.puts "</ul></body></html>"
+end
