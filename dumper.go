@@ -69,7 +69,8 @@ func (*dumper) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.Handle("/dump/", &dumper{})
-	http.Handle("/test/", http.FileServer(http.Dir("test")))
+	http.Handle("/tests/", http.FileServer(http.Dir("tests")))
+	http.Handle("/files/", http.FileServer(http.Dir("files")))
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "index.html")
 	})

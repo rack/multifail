@@ -1,4 +1,5 @@
 # TODO(raggi): reach out to masinter@adobe.com and plh@w3.org and get this party started.
+require 'fileutils'
 
 # TODO(raggi): add tests that exercise the FormData API.
 def render(testname, page_charset, form_charset, fields)
@@ -101,6 +102,8 @@ files = %w[a.txt a.bin a.none]
 files += %w[a"file a%file a%%file a'file a+file a&file a?file]
 files += ["a file", "a filé", "a ƒile"]
 
+FileUtils.mkdir_p 'files'
+FileUtils.mkdir_p 'tests'
 content = (0..255).map(&:chr).join
 files.each do |f|
   open("files/#{f}", "w") { |io| io.write content }
