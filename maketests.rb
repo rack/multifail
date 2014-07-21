@@ -24,7 +24,7 @@ def render(testname, page_charset, form_charset, fields)
 #{"<meta charset='#{page_charset}'>" if page_charset}
 </head>
 <body>
-<form action=#{quote}#{etestname}#{quote} enctype="multipart/form-data" #{"accept-charset='#{form_charset}'" if form_charset}>
+<form action=#{quote}/dump/#{etestname}#{quote} method=POST enctype="multipart/form-data" #{"accept-charset='#{form_charset}'" if form_charset}>
   #{fields.join("\n  ")}
   <input type="submit">
 </form>
