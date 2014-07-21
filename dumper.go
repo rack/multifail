@@ -64,7 +64,7 @@ func (*dumper) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	f.Write(b)
 
 	log.Printf("wrote dump to %s", fpath)
-	w.WriteHeader(200)
+	http.ServeFile(w, r, fpath)
 }
 
 func main() {
@@ -75,5 +75,8 @@ func main() {
 		http.ServeFile(w, r, "index.html")
 	})
 
-	http.ListenAndServe(":8000", nil)
+	err := http.ListenAndServe(":8000", nil)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
