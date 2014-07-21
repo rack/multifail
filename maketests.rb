@@ -1,5 +1,6 @@
 # TODO(raggi): reach out to masinter@adobe.com and plh@w3.org and get this party started.
 require 'fileutils'
+require 'uri'
 
 # TODO(raggi): add tests that exercise the FormData API.
 def render(testname, page_charset, form_charset, fields)
@@ -131,7 +132,7 @@ end
 open('index.html', 'w') do |io|
   io.puts "<!doctype html><html><head><title>multifail</title></head><body><ul>"
   Dir['tests/*.html'].each do |test|
-    io.puts "<li><a href='#{test}'>#{test}</a></li>"
+    io.puts "<li><a href='#{URI.escape test}'>#{test}</a></li>"
   end
   io.puts "</ul></body></html>"
 end
