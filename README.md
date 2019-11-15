@@ -1,5 +1,5 @@
-The Morbidly Obese Multipart Test Suite
-=======================================
+The Rather Large Multipart Test Suite
+=====================================
 
 The purpose of this test suite is to generate a corpus of data that can be used
 to validate http servers / applications ability to parse multipart/form-data.
